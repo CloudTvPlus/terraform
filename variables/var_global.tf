@@ -8,8 +8,10 @@ variable "atlantis_user" {
 # Add all account ID to here
 variable "account_id" {
   default = {
-    id   = ""
-    prod = "636863929368"
+    id = "084180625896"
+    # 20211213 kys-id 변경 시작
+    # prod = "636863929368"
+    # 20211213 kys-id 변경 끝
   }
 }
 
@@ -19,17 +21,18 @@ variable "remote_state" {
   default = {
     # VPC
     vpc = {
-      artdapne2 = {
+      kysdapne2 = {
         region = "ap-northeast-2"
-        bucket = "art-id-apnortheast2-tfstate"
-        key    = "art/terraform/vpc/artd_apnortheast2/terraform.tfstate"
+        bucket = "kys-id-apnortheast2-tfstate"
+        key    = "kys/terraform/vpc/kysd_apnortheast2/terraform.tfstate"
       }
-
-      artpapne2 = {
-        region = "ap-northeast-2"
-        bucket = "art-prod-apnortheast2-tfstate"
-        key    = "art/terraform/vpc/artp_apnortheast2/terraform.tfstate"
-      }
+      # 20211213 kys-id 변경 시작
+      # kyspapne2 = {
+      #   region = "ap-northeast-2"
+      #   bucket = "art-prod-apnortheast2-tfstate"
+      #   key    = "art/terraform/vpc/artp_apnortheast2/terraform.tfstate"
+      # }
+      # 20211213 kys-id 변경 끝
     }
 
 
@@ -48,15 +51,21 @@ variable "remote_state" {
 
       id = {
         region = "ap-northeast-2"
-        bucket = "art-id-apnortheast2-tfstate"
-        key    = "art/terraform/iam/art-id/terraform.tfstate"
+        # 20211213 kys-id 변경 시작
+        #bucket = "art-id-apnortheast2-tfstate"
+        bucket = "kys-id-apnortheast2-tfstate"
+        #key    = "art/terraform/iam/art-id/terraform.tfstate"
+        key = "kys/terraform/iam/kys-id/terraform.tfstate"
+        # 20211213 kys-id 변경 끝
       }
 
-      prod = {
-        region = "ap-northeast-2"
-        bucket = "art-id-apnortheast2-tfstate"
-        key    = "art/terraform/iam/art-prod/terraform.tfstate"
-      }
+      # 20211213 kys-id 변경 시작
+      #   prod = {
+      #     region = "ap-northeast-2"
+      #     bucket = "art-id-apnortheast2-tfstate"
+      #     key    = "art/terraform/iam/art-prod/terraform.tfstate"
+      #   }
+      # 20211213 kys-id 변경 끝
     }
 
 
@@ -66,19 +75,24 @@ variable "remote_state" {
       id = {
         apne2 = {
           region = "ap-northeast-2"
-          bucket = "art-id-apnortheast2-tfstate"
-          key    = "art/terraform/kms/art-id/id_apnortheast2/terraform.tfstate"
+          # 20211213 kys-id 변경 시작
+          #bucket = "art-id-apnortheast2-tfstate"
+          bucket = "kys-id-apnortheast2-tfstate"
+          #key = "art/terraform/kms/art-id/id_apnortheast2/terraform.tfstate"
+          key = "kys/terraform/kms/kys-id/id_apnortheast2/terraform.tfstate"
+          # 20211213 kys-id 변경 끝
         }
       }
 
-      prod = {
-        apne2 = {
-          region = "ap-northeast-2"
-          bucket = "art-prod-apnortheast2-tfstate"
-          key    = "art/terraform/kms/art-prod/prod_apnortheast2/terraform.tfstate"
-        }
-      }
-
+      # 20211213 kys-id 변경 시작
+      # prod = {
+      #   apne2 = {
+      #     region = "ap-northeast-2"
+      #     bucket = "art-prod-apnortheast2-tfstate"
+      #     key    = "art/terraform/kms/art-prod/prod_apnortheast2/terraform.tfstate"
+      #   }
+      # }
+      # 20211213 kys-id 변경 끝
 
     }
   }
